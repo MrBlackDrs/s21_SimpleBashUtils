@@ -7,7 +7,7 @@ echo "1: find 'i' without flags"
 ./s21_grep i ../common/test.txt > file1
 grep i ../common/test.txt > file2
 out="$(diff -s file1 file2)"
-if [ "Files file1 and file2 are identical" == "$out" ]; then
+if [ "Files file1 and file2 are identical" = "$out" ]; then
     echo "success"
     (( SUCCESS++ ))
 else
@@ -24,7 +24,7 @@ do
         ./s21_grep $var $pattern ../common/test.txt > file1
         grep $var $pattern ../common/test.txt > file2
         out="$(diff -s file1 file2)"
-        if [ "Files file1 and file2 are identical" == "$out" ]; then
+        if [ "Files file1 and file2 are identical" = "$out" ]; then
             echo "success"
             (( SUCCESS++ ))
         else
@@ -46,7 +46,7 @@ echo "$i: test grep -n i ../common/empty.txt"
 ./s21_grep -n i ../common/empty.txt > file1
 grep -n i ../common/empty.txt > file2
 out="$(diff -s file1 file2)"
-if [ "Files file1 and file2 are identical" == "$out" ]; then
+if [ "Files file1 and file2 are identical" = "$out" ]; then
     echo "success"
     (( SUCCESS++ ))
 else
@@ -63,7 +63,7 @@ do
     ./s21_grep $var $pattern ../common/test.txt > file1
     grep $var $pattern ../common/test.txt > file2
     out="$(diff -s file1 file2)"
-    if [ "Files file1 and file2 are identical" == "$out" ]; then
+    if [ "Files file1 and file2 are identical" = "$out" ]; then
         echo "success"
         (( SUCCESS++ ))
     else
@@ -87,7 +87,7 @@ do
     ./s21_grep $var $filenames > file1
     grep $var $filenames > file2
     out="$(diff -s file1 file2)"
-    if [ "Files file1 and file2 are identical" == "$out" ]; then
+    if [ "Files file1 and file2 are identical" = "$out" ]; then
         echo "success"
         (( SUCCESS++ ))
     else
@@ -101,7 +101,7 @@ echo "\n$i: test flag -f"
 ./s21_grep -f ../common/test2.txt $filenames > file1
 grep -f ../common/test2.txt $filenames > file2
 out="$(diff -s file1 file2)"
-if [ "Files file1 and file2 are identical" == "$out" ]; then
+if [ "Files file1 and file2 are identical" = "$out" ]; then
     echo "success"
     (( SUCCESS++ ))
 else
@@ -121,7 +121,7 @@ do
            ./s21_grep $LAST_TEST > file1
            grep $LAST_TEST > file2
            out="$(diff -s file1 file2)"
-           if [ "Files file1 and file2 are identical" == "$out" ]
+           if [ "Files file1 and file2 are identical" = "$out" ]
                then
                    (( SUCCESS++ ))
                else
